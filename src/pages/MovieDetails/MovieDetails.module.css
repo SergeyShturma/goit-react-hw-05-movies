@@ -1,0 +1,134 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  gap: 50px;
+}
+
+.columnImg {
+  transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  position: relative;
+}
+
+.columnImg:hover::before {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  overflow: hidden;
+}
+
+.columnImg:hover::after {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px;
+  height: 150px;
+  border-radius: 50px;
+  background: url('../../images/youtube-svgrepo-com.svg') no-repeat center
+    center;
+  background-size: contain;
+  transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  overflow: hidden;
+}
+
+.columnImg:hover .detalisImg {
+  transform: scale(1.05);
+}
+
+.detalisImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  overflow: hidden;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  list-style-type: upper-roman;
+}
+
+.item {
+  margin-top: 20px;
+  padding-left: 15px;
+}
+
+.link {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+  transition: all 600ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.link:hover {
+  background-color: rgb(181, 45, 45);
+  color: antiquewhite;
+  box-shadow: 1px 2px 4px 3px rgba(0, 0, 0, 0.5);
+}
+
+.score span {
+  font-size: 24px;
+  background-color: antiquewhite;
+  transition: all 700ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.score:hover span {
+  transform: scale(1.3);
+  background-color: rgb(181, 45, 45);
+  color: antiquewhite;
+}
+
+.genres {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+.videoBackdrop {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.iconBackModal {
+  position: absolute;
+  display: flex;
+  fill: rgb(188, 68, 13);
+  width: 100px;
+  height: 50px;
+  top: 3%;
+  right: 1%;
+  cursor: pointer;
+}
+
+.videoModal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 500px;
+  width: 1100px;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.57);
+  border-radius: 3px;
+  box-shadow: 0 0 5px 5px rgba(45, 201, 84, 0.7),
+    inset 0 0 30px 10px rgba(45, 201, 81, 0.7);
+}
